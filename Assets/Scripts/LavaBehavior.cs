@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LavaBehavior : MonoBehaviour
 {
-    float TakeDamageRate = 1f;
+    float TakeDamageRate = 0.8f;
     float lastTakenDamage = 0.0f;
 
 

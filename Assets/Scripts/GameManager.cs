@@ -1,24 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private GameObject[] Tiles;
     private Transform gameCanvas;
-
+    private Transform player;
+    
     // Start is called before the first frame update
     void Start()
     {
         Tiles = Resources.LoadAll<GameObject>("Tiles");
         gameCanvas = GameObject.Find("GameCanvas").transform;
+        player = GameObject.Find("Player").transform;
+        
+
         InvokeRepeating("CreateTiles", 0, 0.8f);
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (player.position.y <= -5.5)
+        { SceneManager.LoadScene("MainMenu"); }
     }
 
     private void CreateTiles()  // creating Tiles
