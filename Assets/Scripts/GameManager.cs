@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
         int rangNum = Random.Range(0, Tiles.Length);
         GameObject tempTile = Tiles[rangNum];
         GameObject Tile = null;
-        if (rangNum == 1 || rangNum == 2)
+        if (rangNum == 1 || rangNum == 2 || rangNum == 4)
         {
             Tile = Instantiate(tempTile, new Vector3(Random.Range(-180, 180), -570, 0), Quaternion.identity);
         }
