@@ -1,2 +1,2 @@
 # GoDown100
- Unity Game
+Go to https://kalunyeung.itch.io/godown100 and check out the game!
