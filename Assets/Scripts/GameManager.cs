@@ -69,6 +69,7 @@ public class GameManager : MonoBehaviour
         Tile.transform.SetParent(gameCanvas, false);
 
         Tile.AddComponent<TileMove>();
+        Destroy(Tile, 8f);
 
 
     }
