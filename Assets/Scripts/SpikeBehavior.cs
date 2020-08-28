@@ -25,7 +25,7 @@ public class SpikeBehavior : MonoBehaviour
 
             collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
 
-            StartCoroutine(EnableBox(0.1F));
+            StartCoroutine(EnableBox(0.2F));
         }
 
 
