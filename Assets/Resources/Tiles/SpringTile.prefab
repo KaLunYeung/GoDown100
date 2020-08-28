@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3056624922074499714}
   - component: {fileID: 3197052547324463890}
   - component: {fileID: 6779343922249512145}
+  - component: {fileID: -8512291566887766260}
   m_Layer: 0
   m_Name: SpringTile
   m_TagString: Untagged
@@ -101,3 +102,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 124.56511, y: 24.218563}
   m_EdgeRadius: 0
+--- !u!114 &-8512291566887766260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4241571008465276004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f406398156f9c4fae930679ac11c91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -6,14 +6,14 @@ public class GameManager : MonoBehaviour
 {
     private GameObject[] Tiles;
     private Transform gameCanvas;
-    private Transform player;
+    private GameObject player;
     
     // Start is called before the first frame update
     void Start()
     {
         Tiles = Resources.LoadAll<GameObject>("Tiles");
         gameCanvas = GameObject.Find("GameCanvas").transform;
-        player = GameObject.Find("Player").transform;
+        player = GameObject.Find("Player");
         
 
         InvokeRepeating("CreateTiles", 0, 0.8f);
@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.position.y <= -5.5)
+        if (player.transform.position.y <= -5.5 || player.GetComponent<PlayerHealthSystem>().currentHealth <= 0)
         { SceneManager.LoadScene("MainMenu"); }
     }
 
