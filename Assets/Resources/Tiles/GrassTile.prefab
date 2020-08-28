@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3465658503013719631}
   - component: {fileID: 3903803379576659935}
   - component: {fileID: 4928696416459038748}
+  - component: {fileID: -6819520779679286646}
   m_Layer: 0
   m_Name: GrassTile
   m_TagString: Untagged
@@ -101,3 +102,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 124.56511, y: 24.218563}
   m_EdgeRadius: 0
+--- !u!114 &-6819520779679286646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2354881760153671849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c072b077c5c0517408a1ee3296d353d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

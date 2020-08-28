@@ -18,14 +18,16 @@ public class PlayerHealthSystem : MonoBehaviour
 
     void Update()
     {
-       
+        if (currentHealth <= 0)
+        { gameObject.GetComponent<BoxCollider2D>().enabled = false; }
 
 
 
 
 
 
-       
+
+
 
 
 
@@ -38,8 +40,11 @@ public class PlayerHealthSystem : MonoBehaviour
 
     public void Heal(int amount)
     {
-        currentHealth += amount;
-        healthBar.SetHealth(currentHealth);
+        if (currentHealth < 100)
+        {
+            currentHealth += amount;
+            healthBar.SetHealth(currentHealth);
+        }
     }
 
 }

@@ -2,30 +2,55 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     private GameObject[] Tiles;
     private Transform gameCanvas;
     private GameObject player;
-    
-    // Start is called before the first frame update
+    public AudioSource DeathAudioSource;
+    private bool triggered = false;
+
+    public Text text1;
+
+    private int score = 0;
     void Start()
     {
         Tiles = Resources.LoadAll<GameObject>("Tiles");
         gameCanvas = GameObject.Find("GameCanvas").transform;
         player = GameObject.Find("Player");
-        
 
+
+
+        InvokeRepeating("AddScore", 3f, 3f);
         InvokeRepeating("CreateTiles", 0, 0.8f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (player.transform.position.y <= -5.5 || player.GetComponent<PlayerHealthSystem>().currentHealth <= 0)
-        { SceneManager.LoadScene("MainMenu"); }
-    }
+        
+        if (player.transform.position.y <= -5.5 )
+        {
 
+            if (!triggered)
+            { 
+                DeathAudioSource.Play();
+                triggered = true;
+            }
+
+            StartCoroutine(LoadScene());
+        }
+
+
+    }
+    private void AddScore() 
+    {
+
+        score += 1;
+        text1.text = score.ToString();
+        
+    }
     private void CreateTiles()  // creating Tiles
 
     {
@@ -44,6 +69,16 @@ public class GameManager : MonoBehaviour
         Tile.transform.SetParent(gameCanvas, false);
 
         Tile.AddComponent<TileMove>();
+
+
+    }
+    IEnumerator LoadScene()
+    {
+        
+        
+
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("MainMenu");
 
 
     }
